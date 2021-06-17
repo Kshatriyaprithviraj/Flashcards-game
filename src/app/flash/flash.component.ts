@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {IFlash} from './../flash/flash.model';
 
 @Component({
   selector: 'app-flash',
@@ -6,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./flash.component.css']
 })
 export class FlashComponent implements OnInit {
+
+  @Input() flash: IFlash = {
+    id: 1,
+    question: 'React to Angular',
+    answer: 'No React-ion',
+    show: 'false'
+  }
 
   constructor() { }
 
