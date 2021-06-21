@@ -6,9 +6,7 @@ function getRandomNumber() {
   return Math.floor(Math.random() * 100000);
 }
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class FlashService {
 
   flashs: IFlash[] = [

@@ -1,28 +1,32 @@
 <form #flashForm="ngForm">
   <h1 class="is-size-3">{{ editing ? "Edit" : "Add New" }} Flash Card</h1>
-  <div>
+  <div class="field">
     <label class="label" for="">Question</label>
     <div class="control">
       <input
-        class="input"
         required
+        class="input"
         type="text"
         name="question"
         #questionEl="ngModel"
-        [ngClass]="{ 'is danger': questionEl.invalid && !questionEl.pristine }"
+        [ngClass]="{ 'is-danger': questionEl.invalid && !questionEl.pristine }"
         [(ngModel)]="flash.question"
       />
     </div>
   </div>
-  <div class="control">
-    <input
-      required
-      type="text"
-      name="answer"
-      answerEl="ngModel"
-      [ngClass]="{ 'is-danger': answerEl.invalid && !answerEl.pristine }"
-      [(ngModel)]="flash.answer"
-    />
+  <div class="field">
+    <label for="" class="label">Answer</label>
+    <div class="control">
+      <input
+        required
+        class="input"
+        type="text"
+        name="answer"
+        #answerEl="ngModel"
+        [ngClass]="{ 'is-danger': answerEl.invalid && !answerEl.pristine }"
+        [(ngModel)]="flash.answer"
+      />
+    </div>
   </div>
 
   <button
@@ -58,13 +62,13 @@
 
 <button class="button">Refresh</button>
 
-<div class="flashs">
+<div class="flashs" *ngIf="flashs$ | async as flashs">
   <app-flash
     *ngFor="let flash of flashs; trackBy: trackByFlashId"
     [flash]="flash"
-    (onToggleCard)="handleToggleCard($event)"
-    (onDelete)="handleDelete($event)"
-    (onEdit)="handleEdit($event)"
-    (onRememberedChange)="handleRememberedChange($event)"
+    (toggleCard)="handleToggleCard($event)"
+    (delete)="handleDelete($event)"
+    (edit)="handleEdit($event)"
+    (rememberedChange)="handleRememberedChange($event)"
   ></app-flash>
 </div>

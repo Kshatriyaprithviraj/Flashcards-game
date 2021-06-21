@@ -15,7 +15,8 @@ function getRandNumbers() {
 export class AppComponent {
   title = 'Flashcards-game';
 
-  @ViewChild('flashform', {static: false}) flashForm: NgForm;
+  @ViewChild('flashform', { static: false })
+  flashForm!: NgForm;
   editing = false;
   editingId: any;
   flash = {
@@ -44,7 +45,7 @@ export class AppComponent {
   handleCancel() {
     this.editing = false;
     this.editingId = undefined;
-    this.handleClear()
+    this.handleClear();
   }
 
   handleSubmit(): void {
