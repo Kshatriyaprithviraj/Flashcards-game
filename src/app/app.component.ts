@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { NgForm } from "@angular/forms";
+import { FlashService } from './flash.service';
 import { IFlash } from './flash.model';
 
 function getRandNumbers() {
@@ -13,7 +15,12 @@ export class AppComponent {
   title = 'Flashcards-game';
   editing = false;
   editingId: number | undefined;
-
+  flash = {
+    question: '',
+    answer: '',
+    show: '',
+    id: '',
+  }
   flashs: IFlash[] = [
     {
       question: 'Question 1',
