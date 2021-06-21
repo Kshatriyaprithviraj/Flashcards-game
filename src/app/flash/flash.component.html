@@ -1,8 +1,8 @@
 <div class="card">
   <header
     class="card-header"
-    (click)="toggleCard()"
     [ngClass]="flash.remembered"
+    (click)="onToggleCard()"
   >
     <p class="card-header-title">
       {{ flash.question }}
@@ -17,12 +17,14 @@
       </span>
     </a>
   </header>
+
   <div *ngIf="flash.show">
     <div class="card-content">
       <div class="content">
         {{ flash.answer }}
       </div>
     </div>
+
     <footer class="card-footer">
       <a href="#" class="card-footer-item" (click)="markCorrect()">
         <i class="fas fa-check"></i>
