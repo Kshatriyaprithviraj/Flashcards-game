@@ -13,7 +13,7 @@ function getRandNumbers() {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Flashcards-game';
+  title = 'Flashify 📇';
 
   @ViewChild('flashform', { static: false })
   flashForm!: NgForm;
@@ -72,7 +72,7 @@ export class AppComponent {
     this.handleCancel();
   }
 
-  handleRememberedChange({ id, flag }) {
+  handleRememberedChange({id,flag} : {id:any, flag:any}) {
     this.flashService.rememberedChange(id, flag);
   }
 }

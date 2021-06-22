@@ -5,7 +5,6 @@ import { IFlash } from './flash.model';
 function getRandomNumber() {
   return Math.floor(Math.random() * 100000);
 }
-
 @Injectable()
 export class FlashService {
 
