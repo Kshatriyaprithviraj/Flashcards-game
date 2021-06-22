@@ -72,7 +72,7 @@ export class AppComponent {
     this.handleCancel();
   }
 
-  handleRememberedChange({ id, flag }) {
+  handleRememberedChange({id,flag} : {id:any, flag:any}) {
     this.flashService.rememberedChange(id, flag);
   }
 }
