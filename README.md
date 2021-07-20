@@ -1,4 +1,4 @@
-# Flashify &
+# Flashify 📝�
 A simple flash cards game with 5 flash cards to add questions & answers. 
 
 # Toolset 🧰
